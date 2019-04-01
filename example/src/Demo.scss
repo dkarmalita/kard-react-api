@@ -1,0 +1,14 @@
+.Demo {
+  .tool-text {
+    color: blue;
+  }
+  .boxed-block {
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 10px;
+    &--tools {
+      border-radius: 5px;
+      background: aqua;
+    }
+  }
+}
