@@ -44,6 +44,7 @@ const NewUser = ({ newUserState }) => {
 const Demo = (props) => {
   // console.log('props',props)
   const { getUserList, createUser } = props.apiState;
+  document.title = props.appName;
   return (
     <div>
       <button onClick={ ()=>api.getUserList() }>Get users</button>
@@ -57,7 +58,7 @@ const Demo = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { ...ownProps, apiState: state, api }
+  return { ...ownProps, appName: '@kard/react-api demo',apiState: state, api }
 }
 
 export default apiStore.connect(mapStateToProps)(Demo)
