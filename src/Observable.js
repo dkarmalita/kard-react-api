@@ -30,10 +30,3 @@ export function Observable(initialState={}) {
     getState: () => ({ ...state }),
   };
 }
-
-/* example */
-// const $history = new Observable();
-// const unsubscribe = $history.subscribe(console.log)
-// $history.setState({ data: 'test' }) // {data: "test"}
-// unsubscribe()
-// $history.setState({ data: 'test2' }) // nothing to print
