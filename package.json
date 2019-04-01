@@ -1,0 +1,20 @@
+{
+  "name": "kard-react-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "react-tools transpile --watch",
+    "build": "react-tools transpile",
+    "eslint": "react-tools eslint",
+    "esfix": "react-tools eslint --fix",
+    "test": "react-tools jest",
+    "jest:config": "react-tools jest --showConfig"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@kard/react-tools": "^0.2.3"
+  }
+}
