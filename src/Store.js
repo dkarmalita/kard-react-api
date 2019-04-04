@@ -1,11 +1,11 @@
-import { Observable } from './Observable';
-import { Connect } from './Connect';
+import Observable from './Observable';
+import Connect from './Connect';
 
-export const Store = function(initialState={}){
+export default function Store(initialState = {}) {
   const $store = new Observable(initialState);
   const connect = new Connect($store);
   return {
     ...$store,
     connect,
-  }
+  };
 }

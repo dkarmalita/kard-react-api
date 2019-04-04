@@ -1,43 +1,43 @@
-const baseUrl = `https://jsonplaceholder.typicode.com`;
+const baseUrl = 'https://jsonplaceholder.typicode.com';
 
-export const apiConfig = {
-  getUserList: (fetchParams={}) => {
-    return fetch(`${baseUrl}/users`, fetchParams)
+const apiConfig = {
+  getUserList: (fetchParams = {}) => fetch(`${baseUrl}/users`, fetchParams),
+
+  getUser(id) {
+    return fetch(`${baseUrl}/users/${id}`);
   },
 
-  getUser: function(id){
-    return fetch(`${baseUrl}/users/${id}`)
-  },
-
-  createUser: function({ username, email }){
+  createUser({ username, email }) {
     return fetch(`${baseUrl}/users`, {
-      headers: { "Content-Type": "application/json; charset=utf-8" },
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
       method: 'POST',
       body: JSON.stringify({
         username,
         email,
-      })
-    })
+      }),
+    });
   },
 
-  deleteUser: function(id){
+  deleteUser(id) {
     return fetch(`${baseUrl}/users/${id}`, {
-      method: 'DELETE'
-    })
+      method: 'DELETE',
+    });
   },
 
-  updateUser: function(id, { username, email }){
+  updateUser(id, { username, email }) {
     return fetch(`${baseUrl}/users/${id}`, {
-      headers: { "Content-Type": "application/json; charset=utf-8" },
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
       method: 'PUT',
       body: JSON.stringify({
         username,
         email,
-      })
-    })
+      }),
+    });
   },
 
-  getApiError: function(){
-    return fetch(`${baseUrl}/usersx`)
+  getApiError() {
+    return fetch(`${baseUrl}/usersx`);
   },
-}
+};
+
+export default apiConfig;
