@@ -65,8 +65,14 @@ const Demo = ({ apiState, appName }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  ...ownProps, appName: '@kard/react-api demo', apiState: state, api,
-});
+const mapApiStateToProps = (state, ownProps) => {
+  console.log(state);
+  return {
+    ...ownProps,
+    appName: '@kard/react-api demo',
+    apiState: state, // conteins redux-like status of all api endpoints
+    api, // contains api methods to call
+  };
+};
 
-export default apiStore.connect(mapStateToProps)(Demo);
+export default apiStore.connect(mapApiStateToProps)(Demo);
